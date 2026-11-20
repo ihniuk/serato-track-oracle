@@ -1,6 +1,8 @@
 # ⚡ SERATO TRACK ORACLE — DJ HARMONIC MIXING & TEMPO COMPANION
 > **Intelligent Next-Track Recommender for Serato DJ Pro / Lite on macOS (OSX) & Windows**
 
+![Serato Track Oracle UI](screenshot.png)
+
 Serato Track Oracle runs alongside Serato DJ on your Mac (or external monitor/iPad) to solve the DJ's most critical real-time decision: **"What track should I load on the next deck right now?"**
 
 It continuously analyzes the currently playing track and surfaces instant, club-ready recommendations based on **Camelot Key harmony**, **Tempo (BPM up or down with exact pitch fader %)**, and **Genre/Energy vibe flow**.
