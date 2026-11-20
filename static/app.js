@@ -26,6 +26,25 @@ const appState = {
   currentlyPlayingPreviewId: null
 };
 
+// --- CORNER MICRO HUD LAUNCHER ---
+function openCornerMicroHUD() {
+  const width = 380;
+  const height = 300;
+  const left = Math.max(0, (window.screen.availWidth || window.screen.width) - width - 15);
+  const top = Math.max(0, (window.screen.availHeight || window.screen.height) - height - 20);
+
+  const windowFeatures = `width=${width},height=${height},left=${left},top=${top},menubar=no,toolbar=no,location=no,status=no,resizable=yes`;
+
+  // Try opening docked in bottom-right corner
+  const popup = window.open('/mini', 'SeratoCornerHUD', windowFeatures);
+  if (popup) {
+    popup.focus();
+  } else {
+    // If popup blocked, navigate directly
+    window.location.href = '/mini';
+  }
+}
+
 // Camelot color palette
 const CAMELOT_COLORS = {
   "1A": "#00b4d8", "1B": "#48cae4",
@@ -163,6 +182,12 @@ function initEventListeners() {
   document.getElementById("btn-sync-serato").addEventListener("click", () => {
     fetchCurrentTrack(false);
   });
+
+  // Corner Micro HUD Button (Opens native-sized window in bottom right corner)
+  const miniHudBtn = document.getElementById("btn-open-mini-hud");
+  if (miniHudBtn) {
+    miniHudBtn.addEventListener("click", openCornerMicroHUD);
+  }
 
   // Edit Current Track Modal
   document.getElementById("btn-edit-current").addEventListener("click", () => {

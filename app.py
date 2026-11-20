@@ -397,6 +397,10 @@ def get_history():
 def index():
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
+@app.get("/mini")
+def mini_player():
+    return FileResponse(os.path.join(STATIC_DIR, "mini.html"))
+
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 

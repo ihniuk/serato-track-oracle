@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serato Track Oracle | Micro HUD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/mini.css">
+</head>
+<body class="mini-hud-body">
+  <div class="mini-container">
+    
+    <!-- TOP STATUS STRIP -->
+    <header class="mini-header">
+      <div class="mini-brand">
+        <span class="live-dot"></span>
+        <span class="brand-name">ORACLE HUD</span>
+        <span id="serato-tag" class="mini-serato-tag">LIVE</span>
+      </div>
+      <div class="mini-header-actions">
+        <!-- Quick Vibe Filter -->
+        <button id="btn-toggle-boost" class="mini-chip-btn" title="Toggle Energy Boost only">⚡ Boost</button>
+        <button id="btn-toggle-flow" class="mini-chip-btn" title="Toggle Smooth Flow only">🌊 Flow</button>
+        <a href="/" target="_blank" class="mini-icon-btn" title="Open Full Dashboard">↗</a>
+      </div>
+    </header>
+
+    <!-- CURRENT PLAYING DECK STRIP -->
+    <section class="mini-current-deck">
+      <div class="current-track-meta">
+        <div class="deck-indicator">CURRENT DECK</div>
+        <div id="mini-current-title" class="track-title" title="Losing It">Losing It</div>
+        <div id="mini-current-artist" class="track-artist">FISHER</div>
+      </div>
+      <div class="current-track-badges">
+        <div id="mini-current-key" class="mini-camelot-badge" style="background: #8ac926;">8A</div>
+        <div class="mini-bpm-wrap">
+          <span id="mini-current-bpm" class="mini-bpm-num">125.0</span>
+          <span class="mini-bpm-label">BPM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS FEED (TOP 3-4 COMPACT ROWS) -->
+    <main class="mini-recommendations-list">
+      <div class="rec-section-label">
+        <span>NEXT TRACK SUGGESTIONS</span>
+        <span id="mini-count-badge" class="mini-count">-- Matches</span>
+      </div>
+      <div id="mini-cards-container" class="mini-cards-feed">
+        <!-- Compact cards injected via JS -->
+      </div>
+    </main>
+
+  </div>
+
+  <audio id="mini-audio-player"></audio>
+  <script src="/static/mini.js"></script>
+</body>
+</html>
