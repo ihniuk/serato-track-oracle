@@ -1,0 +1,74 @@
+[
+  {"id": "cur_1", "title": "Losing It", "artist": "FISHER", "key": "8A", "bpm": 125.0, "genre": "Tech House", "energy": 9, "year": 2018},
+  {"id": "cur_2", "title": "Do It To It", "artist": "ACRAZE ft. Cherish", "key": "8A", "bpm": 125.0, "genre": "Tech House", "energy": 8, "year": 2021},
+  {"id": "cur_3", "title": "Ferrari", "artist": "James Hype & Miggy Dela Rosa", "key": "8A", "bpm": 125.0, "genre": "House", "energy": 9, "year": 2022},
+  {"id": "cur_4", "title": "Rhyme Dust", "artist": "MK & Dom Dolla", "key": "8A", "bpm": 128.0, "genre": "Tech House", "energy": 9, "year": 2023},
+  {"id": "cur_5", "title": "Move Your Body", "artist": "Marshall Jefferson x Solardo", "key": "8A", "bpm": 124.0, "genre": "House", "energy": 8, "year": 2019},
+  {"id": "cur_6", "title": "Kernkraft 400 (A Better Day)", "artist": "Topic & A7S", "key": "8A", "bpm": 126.0, "genre": "Dance", "energy": 9, "year": 2022},
+  
+  {"id": "cur_7", "title": "Saving Up", "artist": "Dom Dolla", "key": "9A", "bpm": 126.0, "genre": "House", "energy": 8, "year": 2023},
+  {"id": "cur_8", "title": "Escape", "artist": "Kx5 ft. Hayla", "key": "9A", "bpm": 126.0, "genre": "Melodic Techno", "energy": 9, "year": 2022},
+  {"id": "cur_9", "title": "Turn On The Lights again..", "artist": "Fred again.. & Swedish House Mafia", "key": "9A", "bpm": 132.0, "genre": "Tech House", "energy": 9, "year": 2022},
+  {"id": "cur_10", "title": "Moth To A Flame", "artist": "Swedish House Mafia & The Weeknd", "key": "9A", "bpm": 120.0, "genre": "House", "energy": 8, "year": 2021},
+  {"id": "cur_11", "title": "Pepas", "artist": "Farruko", "key": "9A", "bpm": 130.0, "genre": "Latin House", "energy": 10, "year": 2021},
+
+  {"id": "cur_12", "title": "Cola", "artist": "CamelPhat & Elderbrook", "key": "7A", "bpm": 122.0, "genre": "Deep House", "energy": 7, "year": 2017},
+  {"id": "cur_13", "title": "Piece Of Your Heart", "artist": "Meduza ft. Goodboys", "key": "7A", "bpm": 124.0, "genre": "House", "energy": 8, "year": 2019},
+  {"id": "cur_14", "title": "World, Hold On (FISHER Rework)", "artist": "Bob Sinclar & Steve Edwards", "key": "7A", "bpm": 127.0, "genre": "Tech House", "energy": 9, "year": 2022},
+  {"id": "cur_15", "title": "Stay The Night", "artist": "Zedd ft. Hayley Williams", "key": "7A", "bpm": 128.0, "genre": "EDM", "energy": 9, "year": 2013},
+
+  {"id": "cur_16", "title": "One More Time", "artist": "Daft Punk", "key": "8B", "bpm": 123.0, "genre": "French House", "energy": 8, "year": 2000},
+  {"id": "cur_17", "title": "Music Sounds Better With You", "artist": "Stardust", "key": "8B", "bpm": 124.0, "genre": "House", "energy": 8, "year": 1998},
+  {"id": "cur_18", "title": "Show Me Love", "artist": "Robin S", "key": "8B", "bpm": 120.0, "genre": "House", "energy": 8, "year": 1993},
+
+  {"id": "cur_19", "title": "Where You Are", "artist": "John Summit & Hayla", "key": "10A", "bpm": 126.0, "genre": "Melodic Techno", "energy": 9, "year": 2023},
+  {"id": "cur_20", "title": "Shiver", "artist": "John Summit & Hayla", "key": "10A", "bpm": 130.0, "genre": "Melodic Techno", "energy": 9, "year": 2024},
+  {"id": "cur_21", "title": "Breathe", "artist": "CamelPhat & Cristoph", "key": "10A", "bpm": 125.0, "genre": "Progressive House", "energy": 8, "year": 2018},
+
+  {"id": "cur_22", "title": "Titanium", "artist": "David Guetta ft. Sia", "key": "4A", "bpm": 126.0, "genre": "EDM", "energy": 9, "year": 2011},
+  {"id": "cur_23", "title": "Clarity", "artist": "Zedd ft. Foxes", "key": "4A", "bpm": 128.0, "genre": "EDM", "energy": 9, "year": 2012},
+  {"id": "cur_24", "title": "Wake Me Up", "artist": "Avicii", "key": "10B", "bpm": 124.0, "genre": "EDM", "energy": 9, "year": 2013},
+  {"id": "cur_25", "title": "Levels", "artist": "Avicii", "key": "12B", "bpm": 126.0, "genre": "EDM", "energy": 10, "year": 2011},
+
+  {"id": "cur_26", "title": "Love Tonight (Vintage Culture Remix)", "artist": "Shouse", "key": "11A", "bpm": 126.0, "genre": "Tech House", "energy": 9, "year": 2021},
+  {"id": "cur_27", "title": "Drugs From Amsterdam", "artist": "Mau P", "key": "11A", "bpm": 125.0, "genre": "Tech House", "energy": 9, "year": 2022},
+  {"id": "cur_28", "title": "Gimme That Bounce", "artist": "Mau P", "key": "11A", "bpm": 126.0, "genre": "Tech House", "energy": 9, "year": 2023},
+  {"id": "cur_29", "title": "Heads Will Roll (A-Trak Remix)", "artist": "Yeah Yeah Yeahs", "key": "11A", "bpm": 132.0, "genre": "Electro House", "energy": 10, "year": 2009},
+
+  {"id": "cur_30", "title": "Ray Of Solar", "artist": "Swedish House Mafia", "key": "6A", "bpm": 135.0, "genre": "Progressive House", "energy": 9, "year": 2023},
+  {"id": "cur_31", "title": "Greyhound", "artist": "Swedish House Mafia", "key": "6A", "bpm": 128.0, "genre": "Electro House", "energy": 10, "year": 2012},
+  {"id": "cur_32", "title": "Satisfaction", "artist": "Benny Benassi", "key": "6A", "bpm": 130.0, "genre": "Electro", "energy": 9, "year": 2002},
+
+  {"id": "cur_33", "title": "Baddadan", "artist": "Chase & Status, Bou ft. Trigga & Flowdan", "key": "8A", "bpm": 174.0, "genre": "Drum & Bass", "energy": 10, "year": 2023},
+  {"id": "cur_34", "title": "Disconnect", "artist": "Becky Hill & Chase & Status", "key": "9A", "bpm": 174.0, "genre": "Drum & Bass", "energy": 9, "year": 2023},
+  {"id": "cur_35", "title": "Desire", "artist": "Sub Focus & Dimension", "key": "10A", "bpm": 174.0, "genre": "Drum & Bass", "energy": 9, "year": 2018},
+  {"id": "cur_36", "title": "Solar System", "artist": "Sub Focus", "key": "4A", "bpm": 174.0, "genre": "Drum & Bass", "energy": 10, "year": 2019},
+  {"id": "cur_37", "title": "Rhyme Dust (Dimension Remix)", "artist": "MK & Dom Dolla", "key": "8A", "bpm": 174.0, "genre": "Drum & Bass", "energy": 10, "year": 2023},
+
+  {"id": "cur_38", "title": "Not Like Us", "artist": "Kendrick Lamar", "key": "6A", "bpm": 101.0, "genre": "Hip-Hop", "energy": 9, "year": 2024},
+  {"id": "cur_39", "title": "HUMBLE.", "artist": "Kendrick Lamar", "key": "4A", "bpm": 150.0, "genre": "Hip-Hop", "energy": 9, "year": 2017},
+  {"id": "cur_40", "title": "SICKO MODE", "artist": "Travis Scott ft. Drake", "key": "8A", "bpm": 155.0, "genre": "Hip-Hop", "energy": 10, "year": 2018},
+  {"id": "cur_41", "title": "God's Plan", "artist": "Drake", "key": "9A", "bpm": 77.0, "genre": "Hip-Hop", "energy": 7, "year": 2018},
+  {"id": "cur_42", "title": "First Person Shooter", "artist": "Drake ft. J. Cole", "key": "8A", "bpm": 144.0, "genre": "Hip-Hop", "energy": 9, "year": 2023},
+  {"id": "cur_43", "title": "FE!N", "artist": "Travis Scott ft. Playboi Carti", "key": "1A", "bpm": 148.0, "genre": "Trap", "energy": 10, "year": 2023},
+
+  {"id": "cur_44", "title": "Last Last", "artist": "Burna Boy", "key": "7A", "bpm": 102.0, "genre": "Afrobeat", "energy": 8, "year": 2022},
+  {"id": "cur_45", "title": "City Boys", "artist": "Burna Boy", "key": "8A", "bpm": 104.0, "genre": "Afrobeat", "energy": 8, "year": 2023},
+  {"id": "cur_46", "title": "Water", "artist": "Tyla", "key": "11A", "bpm": 117.0, "genre": "Amapiano", "energy": 8, "year": 2023},
+  {"id": "cur_47", "title": "Calm Down", "artist": "Rema", "key": "9A", "bpm": 107.0, "genre": "Afrobeat", "energy": 7, "year": 2022},
+  {"id": "cur_48", "title": "Unavailable", "artist": "Davido ft. Musa Keys", "key": "10A", "bpm": 112.0, "genre": "Amapiano", "energy": 8, "year": 2023},
+  {"id": "cur_49", "title": "Mnike", "artist": "Tyler ICU ft. Tumelo.za", "key": "11A", "bpm": 113.0, "genre": "Amapiano", "energy": 9, "year": 2023},
+
+  {"id": "cur_50", "title": "Nanana", "artist": "Peggy Gou", "key": "8A", "bpm": 130.0, "genre": "House", "energy": 9, "year": 2023},
+  {"id": "cur_51", "title": "I Remember", "artist": "deadmau5 & Kaskade", "key": "2A", "bpm": 128.0, "genre": "Progressive House", "energy": 7, "year": 2008},
+  {"id": "cur_52", "title": "Adagio for Strings", "artist": "Tiësto", "key": "5A", "bpm": 140.0, "genre": "Trance", "energy": 10, "year": 2005},
+  {"id": "cur_53", "title": "Age of Love (Charlotte de Witte Remix)", "artist": "Age of Love", "key": "5A", "bpm": 130.0, "genre": "Techno", "energy": 9, "year": 2021},
+  {"id": "cur_54", "title": "Sandstorm", "artist": "Darude", "key": "9A", "bpm": 136.0, "genre": "Trance", "energy": 10, "year": 1999},
+  {"id": "cur_55", "title": "Better Off Alone", "artist": "Alice Deejay", "key": "1A", "bpm": 137.0, "genre": "Eurodance", "energy": 9, "year": 1998},
+
+  {"id": "cur_56", "title": "As It Was", "artist": "Harry Styles", "key": "11A", "bpm": 174.0, "genre": "Pop", "energy": 8, "year": 2022},
+  {"id": "cur_57", "title": "Blinding Lights", "artist": "The Weeknd", "key": "4A", "bpm": 171.0, "genre": "Synthwave Pop", "energy": 9, "year": 2020},
+  {"id": "cur_58", "title": "Don't Start Now", "artist": "Dua Lipa", "key": "9A", "bpm": 124.0, "genre": "Nu-Disco", "energy": 8, "year": 2019},
+  {"id": "cur_59", "title": "Levitating", "artist": "Dua Lipa", "key": "10A", "bpm": 103.0, "genre": "Pop / Disco", "energy": 8, "year": 2020},
+  {"id": "cur_60", "title": "Espresso", "artist": "Sabrina Carpenter", "key": "8A", "bpm": 104.0, "genre": "Pop", "energy": 8, "year": 2024}
+]

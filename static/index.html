@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serato Track Oracle | DJ Harmonic Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="dj-theme">
+  <div class="app-container">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="logo-icon">⚡</div>
+        <div class="brand-text">
+          <h1>SERATO TRACK ORACLE</h1>
+          <span class="sub-label">HARMONIC MIXING & TEMPO RADAR</span>
+        </div>
+      </div>
+
+      <div class="header-status-panel">
+        <div id="serato-status-badge" class="status-pill status-standby">
+          <span class="status-dot"></span>
+          <span id="serato-status-text">Scanning Serato Sessions...</span>
+        </div>
+        <button id="btn-sync-serato" class="btn-action-sm" title="Re-check Serato live history">
+          🔄 Sync Serato
+        </button>
+        <button id="btn-open-scanner" class="btn-action-sm" title="Scan local music folder">
+          📂 Local Library
+        </button>
+        <button id="btn-view-queue" class="btn-action-sm badge-container" title="View planned setlist">
+          📋 Setlist Queue <span id="queue-badge-count" class="badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CURRENT PLAYING DECK HUD -->
+    <section class="current-deck-banner">
+      <div class="deck-glow-backdrop"></div>
+      
+      <div class="deck-status-tag">
+        <span class="live-indicator"></span> CURRENT PLAYING TRACK
+        <span id="track-source-tag" class="source-tag">Serato Live Deck</span>
+      </div>
+
+      <div class="deck-main-content">
+        <div class="track-info-col">
+          <h2 id="current-title" class="track-title">Losing It</h2>
+          <h3 id="current-artist" class="track-artist">FISHER</h3>
+          <div class="track-meta-chips">
+            <span id="current-genre-chip" class="chip chip-genre">Tech House</span>
+            <span id="current-musical-key" class="chip chip-key-musical">A Minor (Am)</span>
+          </div>
+        </div>
+
+        <div class="track-metrics-col">
+          <!-- KEY METER -->
+          <div class="metric-box key-metric">
+            <span class="metric-label">CAMELOT KEY</span>
+            <div id="current-key-badge" class="camelot-huge-badge" style="background: #8ac926;">8A</div>
+          </div>
+
+          <!-- BPM METER -->
+          <div class="metric-box bpm-metric">
+            <span class="metric-label">CURRENT TEMPO</span>
+            <div class="bpm-huge-value">
+              <span id="current-bpm-val">125.0</span>
+              <span class="bpm-unit">BPM</span>
+            </div>
+          </div>
+
+          <!-- MANUAL OVERRIDE BUTTON -->
+          <div class="deck-actions">
+            <button id="btn-edit-current" class="btn-deck-edit" title="Manually choose or change track">
+              ✏️ Change Track
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DJ TRANSITION CONTROL BAR -->
+    <nav class="controls-toolbar">
+      <!-- Pitch Range Selector -->
+      <div class="control-group">
+        <label>Pitch Fader Limit</label>
+        <div class="btn-switch-group" id="pitch-limits">
+          <button data-pitch="4.0" class="btn-tab">±4%</button>
+          <button data-pitch="8.0" class="btn-tab active">±8%</button>
+          <button data-pitch="16.0" class="btn-tab">±16%</button>
+        </div>
+      </div>
+
+      <!-- Tempo Direction -->
+      <div class="control-group">
+        <label>Tempo Direction</label>
+        <div class="btn-switch-group" id="tempo-direction">
+          <button data-dir="all" class="btn-tab active">Any</button>
+          <button data-dir="up" class="btn-tab" title="Accelerate / Tempo Up">⬆️ Up</button>
+          <button data-dir="down" class="btn-tab" title="Decelerate / Tempo Down">⬇️ Down</button>
+          <button data-dir="same" class="btn-tab" title="Lock exact BPM">⏸️ Same</button>
+        </div>
+      </div>
+
+      <!-- Energy / Harmonic Goal -->
+      <div class="control-group">
+        <label>Harmonic Mixing Goal</label>
+        <div class="btn-switch-group" id="harmonic-goals">
+          <button data-goal="all" class="btn-tab active">All Mixable</button>
+          <button data-goal="harmonic" class="btn-tab" title="Perfect 0 or ±1 Camelot step">🌊 Smooth Flow</button>
+          <button data-goal="energy_boost" class="btn-tab" title="Key modulation up (+2 or +7 semitones)">⚡ Energy Boost</button>
+          <button data-goal="mood_shift" class="btn-tab" title="Relative Major <-> Minor shift">🎭 Mood Shift</button>
+          <button data-goal="energy_drop" class="btn-tab" title="Cool down / drop energy">🧊 Cooldown</button>
+        </div>
+      </div>
+
+      <!-- Track Source -->
+      <div class="control-group">
+        <label>Catalog Source</label>
+        <div class="btn-switch-group" id="track-source">
+          <button data-source="all" class="btn-tab active">All Sources</button>
+          <button data-source="local" class="btn-tab">📁 Local Serato</button>
+          <button data-source="online" class="btn-tab">🌐 Online Tracks</button>
+        </div>
+      </div>
+
+      <!-- Genre / Keyword Search -->
+      <div class="control-group search-group">
+        <label>Genre / Filter</label>
+        <div class="search-input-wrap">
+          <input type="text" id="genre-search-input" placeholder="e.g. House, Techno, Hip-Hop...">
+          <button id="clear-search-btn" class="clear-btn">&times;</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN WORKSPACE: SUGGESTIONS + WHEEL -->
+    <main class="main-content-layout">
+      
+      <!-- SUGGESTIONS LIST -->
+      <section class="suggestions-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2>NEXT TRACK RECOMMENDATIONS</h2>
+            <span id="results-count-badge" class="count-badge">0 Matches</span>
+          </div>
+          <div class="sorting-indicator">
+            Sorted by <strong>Mix Compatibility & Energy Flow</strong>
+          </div>
+        </div>
+
+        <!-- LIST CONTAINER -->
+        <div id="recommendations-container" class="tracks-grid">
+          <!-- Cards injected via JavaScript -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="empty-state" class="empty-state-card" style="display: none;">
+          <div class="empty-icon">🎧</div>
+          <h3>No matching tracks found for current filters</h3>
+          <p>Try widening your pitch limit (e.g. ±16%) or setting Harmonic Goal to "All Mixable".</p>
+          <button id="btn-reset-filters" class="btn-action">Reset Filters</button>
+        </div>
+      </section>
+
+      <!-- SIDEBAR: CAMELOT VISUALIZER & SETLIST -->
+      <aside class="sidebar-section">
+        <!-- Interactive Camelot Wheel Card -->
+        <div class="side-card camelot-card">
+          <div class="side-card-header">
+            <h3>CAMELOT HARMONIC RADAR</h3>
+            <span class="radar-tag">Circle of 5ths</span>
+          </div>
+          <div class="wheel-canvas-container">
+            <svg id="camelot-svg" viewBox="-130 -130 260 260" class="camelot-wheel">
+              <!-- SVG wheel sectors generated dynamically -->
+            </svg>
+          </div>
+          <div class="wheel-legend">
+            <div class="legend-item"><span class="legend-dot current"></span> Current Key</div>
+            <div class="legend-item"><span class="legend-dot compatible"></span> Harmonic Mix</div>
+            <div class="legend-item"><span class="legend-dot boost"></span> Energy Boost</div>
+          </div>
+        </div>
+
+        <!-- Live Setlist Queue Card -->
+        <div class="side-card queue-card">
+          <div class="side-card-header">
+            <h3>PLANNED SETLIST</h3>
+            <button id="btn-clear-queue" class="btn-text-danger" title="Clear setlist">Clear</button>
+          </div>
+          <div id="setlist-items" class="setlist-list">
+            <div class="empty-queue-hint">No tracks queued yet. Click "Queue" on any suggested track to plan your set!</div>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- MODAL: MANUAL TRACK EDIT / SELECTOR -->
+  <div id="track-edit-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Change Current Playing Track</h3>
+        <button id="close-modal-btn" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Track Title</label>
+          <input type="text" id="modal-title" placeholder="e.g. Losing It">
+        </div>
+        <div class="form-group">
+          <label>Artist</label>
+          <input type="text" id="modal-artist" placeholder="e.g. FISHER">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Key (Camelot or Musical, e.g. 8A, Am, 11B)</label>
+            <input type="text" id="modal-key" placeholder="8A">
+          </div>
+          <div class="form-group">
+            <label>BPM</label>
+            <input type="number" id="modal-bpm" step="0.1" placeholder="125.0">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Genre</label>
+          <input type="text" id="modal-genre" placeholder="e.g. Tech House">
+        </div>
+        <div class="quick-preset-chips">
+          <span class="preset-label">Quick DJ Presets:</span>
+          <button class="chip-preset" data-title="Losing It" data-artist="FISHER" data-key="8A" data-bpm="125.0" data-genre="Tech House">Losing It (8A - 125 BPM)</button>
+          <button class="chip-preset" data-title="Turn On The Lights" data-artist="Fred again.." data-key="9A" data-bpm="132.0" data-genre="Tech House">Turn On The Lights (9A - 132 BPM)</button>
+          <button class="chip-preset" data-title="Baddadan" data-artist="Chase & Status" data-key="8A" data-bpm="174.0" data-genre="Drum & Bass">Baddadan (8A - 174 BPM)</button>
+          <button class="chip-preset" data-title="Not Like Us" data-artist="Kendrick Lamar" data-key="6A" data-bpm="101.0" data-genre="Hip-Hop">Not Like Us (6A - 101 BPM)</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-save-current-track" class="btn-action">Set as Current Track</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LOCAL LIBRARY SCANNER -->
+  <div id="scanner-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Local DJ Library & Folder Scanner</h3>
+        <button id="close-scanner-btn" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Scan any local folder containing your MP3, WAV, AIFF, or FLAC files. We will extract ID3 tags, BPM, and Musical Key.</p>
+        <div class="form-group">
+          <label>Folder Path on this PC</label>
+          <input type="text" id="input-scan-folder" placeholder="e.g. C:\Users\YourName\Music\DJ Tracks">
+        </div>
+        <button id="btn-execute-scan" class="btn-action">Scan Folder</button>
+        <div id="scan-feedback" class="scan-feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIDDEN AUDIO PLAYER FOR 30s PREVIEWS -->
+  <audio id="global-preview-player"></audio>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
